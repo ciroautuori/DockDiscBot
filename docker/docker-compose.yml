@@ -1,0 +1,15 @@
+services:
+  bot:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../bot:/app
+      - bot_data:/app/data
+    env_file:
+      - .env
+    environment:
+      - TZ=Europe/Rome
+
+volumes:
+  bot_data: 
